@@ -40,3 +40,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'pry-byebug'
+
+# Gem for foundation 5
+gem 'foundation-rails'
