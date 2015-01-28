@@ -1,0 +1,46 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hero {
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+display: table;
+width: 100%;
+background-color: #b6e2f4;
+}
+
+.hero .container2 {
+display: table-cell;
+text-align: center;
+/*background-color: #4e505c;*/
+background-color: #78b5e3;
+}
+
+.logo {
+  background-color: #78b5e3;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  background-height: 100px;
+}
+
+#signupbutton {
+  background-color: #3c7db0;
+  margin-right: 4px;
+  margin-top: 16px;
+}
+
+#signinbutton {
+  background-color: #78b5e3;
+  margin-top: 16px;
+  margin-right: 8px;
+}
+
+
+

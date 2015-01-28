@@ -42,4 +42,4 @@ gem 'spring',        group: :development
 gem 'pry-byebug'
 
 # Gem for foundation 5
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.3.1'
