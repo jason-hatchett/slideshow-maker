@@ -1,3 +1,6 @@
 class Video < ActiveRecord::Base
-  attr_default :views, 0
+  after_initialize :init
+  def init 
+    self.views ||= 0
+  end
 end

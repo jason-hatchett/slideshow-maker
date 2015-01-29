@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Video.create({title:"Welcome!",
-  url:"https://www.youtube.com/watch?v=Wz5Z0JTmjAg",
+  url:"www.youtube.com/embed/Wz5Z0JTmjAg",
   tag:"welcome",
   views: 0
 })
 
 Video.create({title:"Dance!",
-  url:"www.youtube.com/watch?v=60og9gwKh1o",
+  url:"www.youtube.com/embed/60og9gwKh1o",
   tag:"dance",
   views: 0
 })
