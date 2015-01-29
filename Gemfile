@@ -45,3 +45,7 @@ gem 'pry-byebug'
 gem 'foundation-rails', '5.4.3.1'
 
 gem "font-awesome-rails"
+
+gem 'rest-client'
+
+gem "json", "~> 1.8"

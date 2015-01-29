@@ -1,5 +1,21 @@
+
+
+  <section class="banner-all">
+      <%= image_tag("cloud7.png", :size => "150x150")%>
+      <a href="/" class="button radius" id="searchbutton"> SEARCH VIDEOS </a>
+      <a href="/" class="button radius" id="createbutton"> CREATE VIDEO </a>
+      <br>
+      <br>
+ </section>
+
+<%= form_tag("/videos", method: "post") do %>
+  <%= label_tag(:tag, "Enter Hashtag:") %>
+  <%= text_field_tag(:tag) %>
+  <%= submit_tag("Go!") %>
+<% end %>
+<br>
 <center>
-<form action="/videos" method="post">
+<!-- <form action="/videos" method="post">
   <label for="title">Title:</label>
   <input type="text" id="title" name="video[title]">
 
@@ -13,4 +29,4 @@
 
   <input type="submit" value="submit">
 </form>
-</center>
+</center> -->
