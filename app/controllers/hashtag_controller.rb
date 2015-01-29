@@ -1,6 +1,9 @@
 class HashtagController < ApplicationController
   def create
-    @data = JSON.parse RestClient.get 'https://api.instagram.com/v1/tags/dinosaurs/media/recent?access_token=186324152.2933407.a96d5f8c47f046bf8510ad327ec61d06'
-
+    url_base = 'https://api.instagram.com/v1/tags/'
+    search_type = '/media/recent?access_token='
+    token = ENV['INSTAGRAM_API_TOKEN']
+    url = url_base + "dinosaurs" + search_type + token
+    @data = JSON.parse RestClient.get url
   end
 end

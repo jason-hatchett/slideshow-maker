@@ -6,7 +6,7 @@
       <br>
  </section>
 
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag("/search", name: "hashform", :onclick => "return hashtagSubmit();") do %>
   <%= label_tag(:tag, "Enter Hashtag:") %>
   <%= text_field_tag(:tag) %>
   <%= submit_tag("Search") %>
@@ -14,10 +14,16 @@
 
 
 
+<!--
+  <form onsubmit="hashtagSubmit()" method="post" id="my_form">
+      <label for="tag">EVENT HASHTAG:</label>
+      <input type="text" id="tag" name="tag" placeholder="your event hashtag">
+      <button class="btn">Submit</button>
+    </form>
+<br> -->
 
 
-
-<% @data["data"].each do |x|%>
+<% @data["data"].take(3).each do |x|%>
 
    <img src="<%= x["images"]["low_resolution"]["url"] %>" alt="">
 
