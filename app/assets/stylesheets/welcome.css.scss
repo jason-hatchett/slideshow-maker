@@ -9,14 +9,17 @@
 background-size: cover;
 display: table;
 width: 100%;
-background-color: #b6e2f4;
+background-image: url(../images/hashmashbg.jpg);
 }
 
 .hero .container2 {
 display: table-cell;
 text-align: center;
 /*background-color: #4e505c;*/
-background-color: #78b5e3;
+/*background-color: #78b5e3;*/
+background-image: url(hashmashbg.jpg);
+width: 1400px;
+height: 550px;
 }
 
 .logo {
@@ -42,11 +45,19 @@ background-color: #78b5e3;
   margin-right: 8px;
 }
 
-#purposetext {
-  font-family: 'PT Sans', sans-serif;
+.purposetext {
+  font-family: 'Raleway', sans-serif;
 }
 
-#purposetext2 {
-  font-family: 'PT Sans', sans-serif;
+.purposetext2 {
+  font-family: 'Raleway', sans-serif;
 }
 
+#groupsize {
+font-size: 6em;
+color: 3c7db0;
+}
+
+.cloud {
+  opacity: 0.8;
+}

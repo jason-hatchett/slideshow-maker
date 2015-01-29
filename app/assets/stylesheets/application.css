@@ -13,15 +13,7 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  *= require welcome
+ *= require font-awesome
  */
 
-
-#purposetext {
-  font-family: 'PT Sans', sans-serif;
-}
-
-#purposetext2 {
-  font-family: 'PT Sans', sans-serif;
-}
