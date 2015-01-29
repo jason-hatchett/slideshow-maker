@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/create' => 'hashtag#create'
+
   root 'welcome#index'
 
   resources :videos, :except => [:edit, :update]
