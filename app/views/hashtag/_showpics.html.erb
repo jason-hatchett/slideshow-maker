@@ -1,3 +1,7 @@
- <% @data["data"].take(9).each do |x|%>
+<% if @data %>
+  <% @data["data"].each do |x|%>
+
     <img src="<%= x["images"]["low_resolution"]["url"] %>" alt="">
+
+  <% end %>
 <% end %>

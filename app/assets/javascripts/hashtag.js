@@ -18,9 +18,17 @@
 // }
 
 
-jQuery(document).ready(function() {
-  function getdata() {
+// jQuery(document).ready(function() {
+//   function getdata() {
 
-    });
-  }
+//     });
+//   }
+// });
+
+jQuery(document).ready(function() {
+
+
 });
+
+
+

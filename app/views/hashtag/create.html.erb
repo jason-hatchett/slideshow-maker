@@ -1,3 +1,5 @@
+
+
 <section class="banner-all">
       <%= image_tag("cloud7.png", :size => "150x150")%>
       <a href="/" class="button radius" id="searchbutton"> SEARCH VIDEOS </a>
@@ -6,28 +8,32 @@
       <br>
  </section>
 
-<%= form_tag("/search", name: "hashform", :onclick => "return hashtagSubmit();") do %>
-  <%= label_tag(:tag, "Enter Hashtag:") %>
+
+
+
+<%= form_tag("/hashtag/pics") do |f| %>
+  <%= label_tag(:tag) %>
   <%= text_field_tag(:tag) %>
   <%= submit_tag("Search") %>
 <% end %>
-
-
-
-<!--
-  <form onsubmit="hashtagSubmit()" method="post" id="my_form">
+<!--   <div id="my_form">
       <label for="tag">EVENT HASHTAG:</label>
       <input type="text" id="tag" name="tag" placeholder="your event hashtag">
-      <button class="btn">Submit</button>
-    </form>
-<br> -->
+      <%#= link_to "hashtag/pics", remote: true, data: "hello" do %>
+      <button id="hashtag-submit">Submit</button>
+      <%# end %>
+    </div> -->
+<br>
+
+<!-- <a href="#" class="button radius" id="hashtag-submit"> Show me! </a> -->
+
+<div id="instas">
+<%= render "showpics" %>
+
+</div>
 
 
-<% @data["data"].take(3).each do |x|%>
 
-   <img src="<%= x["images"]["low_resolution"]["url"] %>" alt="">
-
-<% end %>
 
 
 

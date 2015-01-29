@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get '/create' => 'hashtag#create'
 
   root 'welcome#index'
 
   post '/search' => 'hashtag#create'
 
+  post '/hashtag/pics' => 'hashtag#create'
+  get '/search' => 'hashtag#search'
   resources :videos, :except => [:edit, :update]
 
 
