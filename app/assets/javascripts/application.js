@@ -15,5 +15,6 @@
 //= require foundation
 //= require turbolinks
 //= require hashtag
+//= require welcome
 
 $(function(){ $(document).foundation(); });
