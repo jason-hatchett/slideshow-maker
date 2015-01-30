@@ -8,7 +8,7 @@
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
-width: 1400px;
+width: 100%;
 height: 100px;
 background-image: url(hashmashbg.jpg);
 }
@@ -25,4 +25,17 @@ background-image: url(hashmashbg.jpg);
   margin-top: 16px;
   margin-right: 8px;
   font-family: 'Raleway', sans-serif;
+}
+
+.hashtag-font {
+  font-family: 'Raleway', sans-serif;
+}
+
+#search-font {
+  font-family: 'Raleway', sans-serif;
+}
+
+.hashtag-images {
+  border-style: solid;
+  border-color: #3c7db0;
 }
