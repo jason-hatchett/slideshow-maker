@@ -4,8 +4,31 @@
       <% if index%5 == 0 %>
         </br></br>
       <% end %>
-
-      <img src="<%= x["images"]["thumbnail"]["url"] %>" id="<%= index %>" class="hashtag-images" />
+      <a class="th">
+        <img src="<%= x["images"]["thumbnail"]["url"] %>" id="<%= index %>" class="hashtag-images" />
+      </a>
     <% end %>
   <% end %>
 </center>
+
+<script>
+
+var selected = []
+
+$('.th').on('click', function(e) {
+  if ($(this).prop("checked") == undefined){
+    $(this).prop("checked", true)
+  }
+  else{
+     $(this).prop("checked", !($(this).prop("checked")))
+  }
+
+  if ( $(this).prop("checked")){
+    $(this).css('opacity', 0.5);
+  }
+  else{
+    $(this).css('opacity', 1);
+  }
+})
+
+</script>
