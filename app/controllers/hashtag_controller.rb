@@ -10,8 +10,8 @@ class HashtagController < ApplicationController
     search_type = '/media/recent?access_token='
     token = ENV['INSTAGRAM_API_TOKEN']
     tag = params[:tag]
-    puts tag
-    url = url_base + tag + search_type + token
+    count = '&count=30'
+    url = url_base + tag + search_type + token + count
     @data = JSON.parse RestClient.get url
   end
 
