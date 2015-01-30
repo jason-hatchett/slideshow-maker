@@ -1,35 +1,28 @@
 
 
 <section class="banner-all">
-      <%= image_tag("cloud7.png", :size => "150x150")%>
-      <a href="/" class="button radius" id="searchbutton"> SEARCH VIDEOS </a>
-      <a href="/" class="button radius" id="createbutton"> CREATE VIDEO </a>
-      <br>
-      <br>
- </section>
+  <%= image_tag("cloud7.png", :size => "150x150")%>
+  <a href="/" class="button radius" id="searchbutton"> SEARCH VIDEOS </a>
+  <a href="/" class="button radius" id="createbutton"> CREATE VIDEO </a>
+  <br>
+  <br>
+</section>
 
 
+<div class="large-3 large-centered columns">
+  <center>
+    <%= form_tag("/hashtag/pics") do |f| %>
+    <%= label_tag 'HashTag', nil, :class => "hashtag-font" %>
+    <%= text_field_tag :tag %>
+    <%= submit_tag "Search", :class => "button radius", :id => "search-font" %>
+    <% end %>
+  </center>
+</div>
 
-
-<%= form_tag("/hashtag/pics") do |f| %>
-  <%= label_tag(:tag) %>
-  <%= text_field_tag(:tag) %>
-  <%= submit_tag("Search") %>
-<% end %>
-<!--   <div id="my_form">
-      <label for="tag">EVENT HASHTAG:</label>
-      <input type="text" id="tag" name="tag" placeholder="your event hashtag">
-      <%#= link_to "hashtag/pics", remote: true, data: "hello" do %>
-      <button id="hashtag-submit">Submit</button>
-      <%# end %>
-    </div> -->
 <br>
 
-<!-- <a href="#" class="button radius" id="hashtag-submit"> Show me! </a> -->
-
 <div id="instas">
-<%= render "showpics" %>
-
+  <%= render "showpics" %>
 </div>
 
 

@@ -14,4 +14,9 @@ class HashtagController < ApplicationController
     url = url_base + tag + search_type + token
     @data = JSON.parse RestClient.get url
   end
+
+  def pictures_selected
+    #variable that's an array of pictures
+  end
+
 end

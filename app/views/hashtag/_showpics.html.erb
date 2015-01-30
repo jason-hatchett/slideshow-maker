@@ -1,7 +1,11 @@
-<% if @data %>
-  <% @data["data"].each do |x|%>
+<center>
+  <% if @data %>
+    <% @data["data"].each_with_index do |x, index|%>
+      <% if index%5 == 0 %>
+        </br></br>
+      <% end %>
 
-    <img src="<%= x["images"]["low_resolution"]["url"] %>" alt="">
-
+      <img src="<%= x["images"]["thumbnail"]["url"] %>" id="<%= index %>" class="hashtag-images" />
+    <% end %>
   <% end %>
-<% end %>
+</center>
