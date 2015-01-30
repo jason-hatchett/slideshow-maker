@@ -6,6 +6,7 @@
       <% end %>
       <a class="th">
         <img src="<%= x["images"]["thumbnail"]["url"] %>" id="<%= index %>" class="hashtag-images" />
+        <i class="fa fa-check" id='bigger'></i>
       </a>
     <% end %>
   <% end %>
@@ -13,7 +14,7 @@
 
 <script>
 
-var selected = []
+$('.fa-check').hide()
 
 $('.th').on('click', function(e) {
   if ($(this).prop("checked") == undefined){
@@ -24,10 +25,12 @@ $('.th').on('click', function(e) {
   }
 
   if ( $(this).prop("checked")){
-    $(this).css('opacity', 0.5);
+    $(this).children('img').css('opacity', 0.5);
+    $(this).children('.fa-check').show();
   }
   else{
-    $(this).css('opacity', 1);
+    $(this).children('img').css('opacity', 1);
+    $(this).children('.fa-check').hide();
   }
 })
 
