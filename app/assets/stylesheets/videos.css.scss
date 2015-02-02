@@ -47,6 +47,18 @@ background-image: url(hashmashbg.jpg);
   position: absolute;
 }
 
+.stay-on-line{
+  display: inline-block;
+}
+
+#hashtag-symbol{
+  margin-top: 7px;
+  margin-left: -120px;
+  position: absolute;
+  transform: rotate(18deg);
+  font-size: 1.5em;
+}
+
 #bigger{
   font-size: 8em;
 }

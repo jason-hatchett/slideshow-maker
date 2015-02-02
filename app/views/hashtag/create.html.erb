@@ -14,8 +14,15 @@
 <div class="large-3 large-centered columns">
   <center>
     <%= form_tag("/hashtag/pics") do |f| %>
-    <%= label_tag 'HashTag', nil, :class => "hashtag-font" %>
-    <%= text_field_tag :tag %>
+    <!-- <%= label_tag 'HashTag', nil, :class => "hashtag-font" %> -->
+    <br>
+    <div class="stay-on-line">
+
+      <i class="fa fa-slack" id='hashtag-symbol'></i>
+      <%= text_field_tag :tag, nil, :placeholder => "Enter Your Hashtag" %>
+      
+    </div>
+    <br>
     <%= submit_tag "Search", :class => "button radius", :id => "search-font" %>
     <% end %>
   </center>
