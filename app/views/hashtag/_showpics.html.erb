@@ -13,6 +13,7 @@
 </center>
 
 <script>
+var pic_array = [];
 
 $('.fa-check').hide()
 
@@ -27,12 +28,18 @@ $('.th').on('click', function(e) {
   if ( $(this).prop("checked")){
     $(this).children('img').css('opacity', 0.5);
     $(this).children('.fa-check').show();
+    pic_array.push($(this).children('img').attr('src'))
+
   }
   else{
     $(this).children('img').css('opacity', 1);
     $(this).children('.fa-check').hide();
+    var index = pic_array.indexOf($(this).children('img').attr('src'));
+    pic_array.splice(index, 1);
   }
 })
+
+//create button and on click send array
 
 </script>
 
