@@ -17,5 +17,6 @@
 //= require hashtag
 //= require welcome
 //= require videos
+//= require html5gallery
 
 $(function(){ $(document).foundation(); });

@@ -168,3 +168,13 @@ height: 550px;
   opacity: .7;
   height: 145px;
 }
+
+#rays  {
+  background:url(rays.png) 0 0 no-repeat;
+  position:absolute;
+  top:0;
+  left:0;
+  width:490px;
+  height:490px;
+  transform:scale(1) rotate(16.768rad);
+}
