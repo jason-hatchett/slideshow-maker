@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require hashtag
 //= require welcome
+//= require videos
 
 $(function(){ $(document).foundation(); });

@@ -1,16 +1,17 @@
 <center>
-  <% if @data %>
-    <% @data["data"].each_with_index do |x, index|%>
+  <% if @alldata %>
+    <% @alldata.each_with_index do |x, index|%>
       <% if index%5 == 0 %>
         </br></br>
       <% end %>
-      <a class="th">
-        <img src="<%= x["images"]["thumbnail"]["url"] %>" id="<%= index %>" class="hashtag-images" />
-        <i class="fa fa-check" id='bigger'></i>
-      </a>
+        <a class="th">
+          <img src="<%= x["images"]["thumbnail"]["url"] %>" id="<%= index %>" class="hashtag-images" />
+          <i class="fa fa-check" id='bigger'></i>
+        </a>
     <% end %>
   <% end %>
 </center>
+
 
 <script>
 var pic_array = [];
