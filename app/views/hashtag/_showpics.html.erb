@@ -1,14 +1,32 @@
 <center>
+
   <% if @alldata %>
+
+    <div class="large-3 large-centered columns">
+      <%= label_tag 'Title Your Video:', nil, :class => "hashtag-font" %>
+      <%= text_field_tag :video_name, nil, :placeholder => "Enter Video Name" %>
+    </div>
+
+    <div id="img-container" class="large-12 large-centered columns">
+      <!-- Where we store the currently used images-->
+    </div>
+    <br>
+    <br>
+    <%= submit_tag "BUILD IT", :class => "button radius", :id => "search-font" %>
+
     <% @alldata.each_with_index do |x, index|%>
       <% if index%5 == 0 %>
         </br></br>
       <% end %>
         <a class="th">
           <img src="<%= x["images"]["thumbnail"]["url"] %>" id="<%= index %>" class="hashtag-images" />
-          <i class="fa fa-check" id='bigger'></i>        </a>
+          <i class="fa fa-check" id='bigger'></i>
+        </a>
     <% end %>
+    
+
   <% end %>
+
 </center>
 
 
@@ -26,16 +44,22 @@ $('.th').on('click', function(e) {
   }
 
   if ( $(this).prop("checked")){
+    var copy = $(this).children('img').clone()
     $(this).children('img').css('opacity', 0.5);
     $(this).children('.fa-check').show();
     pic_array.push($(this).children('img').attr('src'))
+    
+    $('#img-container').append(copy)
 
   }
   else{
+    var item_id = $(this).children('img').attr('id')
     $(this).children('img').css('opacity', 1);
     $(this).children('.fa-check').hide();
     var index = pic_array.indexOf($(this).children('img').attr('src'));
     pic_array.splice(index, 1);
+
+    $('#img-container').children().remove('#'+item_id)
   }
 })
 
