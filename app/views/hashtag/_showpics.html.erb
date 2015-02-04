@@ -1,19 +1,44 @@
+
+
 <center>
+
   <% if @alldata %>
+    <div class="large-3 large-centered columns">
+      <%= label_tag 'Title Your Video:', nil, :class => "hashtag-font" %>
+      <%= text_field_tag :video_name, nil, :placeholder => "Enter Video Name" %>
+    </div>
+    <br>
+    <div id="sortable" class="large-12 large-centered columns">
+      <!-- Where we store the currently used images-->
+    </div>
+    <br>
+    <br>
+    <%= submit_tag "BUILD IT", :class => "button radius", :id => "search-font" %>
+
     <% @alldata.each_with_index do |x, index|%>
       <% if index%5 == 0 %>
         </br></br>
       <% end %>
         <a class="th">
           <img src="<%= x["images"]["thumbnail"]["url"] %>" id="<%= index %>" class="hashtag-images" />
-          <i class="fa fa-check" id='bigger'></i>        </a>
+          <i class="fa fa-check" id='bigger'></i>
+        </a>
     <% end %>
-  <% end %>
-</center>
+    
 
+  <% end %>
+
+</center>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
 <script>
-var pic_array = [];
+
+$(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+});
+
 
 $('.fa-check').hide()
 
@@ -26,20 +51,35 @@ $('.th').on('click', function(e) {
   }
 
   if ( $(this).prop("checked")){
+    var copy = $(this).children('img').clone()
     $(this).children('img').css('opacity', 0.5);
     $(this).children('.fa-check').show();
-    pic_array.push($(this).children('img').attr('src'))
+    //pic_array.push($(this).children('img').attr('src'))
+    
+    $('#sortable').append(copy)
 
   }
   else{
+    var item_id = $(this).children('img').attr('id')
     $(this).children('img').css('opacity', 1);
     $(this).children('.fa-check').hide();
-    var index = pic_array.indexOf($(this).children('img').attr('src'));
-    pic_array.splice(index, 1);
+    //var index = pic_array.indexOf($(this).children('img').attr('src'));
+    //pic_array.splice(index, 1);
+
+    $('#sortable').children().remove('#'+item_id)
   }
 })
 
+
 //create button and on click send array
+
+/* this will return an array of images
+
+listylist = $('#sortable').children().map(function(i,a){
+  return a.src
+})
+
+*/
 
 </script>
 
