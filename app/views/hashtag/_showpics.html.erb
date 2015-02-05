@@ -85,15 +85,16 @@ $("#submit_button").click(function(){
 
   nameyname = $("#video_name").val()
 
-  listylist = $('#sortable').children().map(function(i,a){
-    return a.src
+  listylist = []
+  $('#sortable').children().map(function(i,a){
+    listylist.push("" + a.src.replace("/s150x150", ""))
   })
 
   if (nameyname.length > 5 && listylist.length > 4){
-    //send to server
-    //present or redirect to loading icon
+    
+    sendToBackend(nameyname,"None",listylist)
   }
-  else if (nameyname.length > 6) {
+  else if (nameyname.length > 4) {
     alert("Please select at least 5 images")
     $('#notice').text("Please select at least 5 images")
   }
@@ -109,13 +110,22 @@ $("#submit_button").click(function(){
 });
 
 
-/* this will return an array of images
+function sendToBackend(title, music, imgs){
+  
+  $.ajax({
+  type: 'POST',
+  url: '/hashtag/encode',
+  data:{'title': title, 'imgs': imgs, 'music': music}
+  }).success(function (item) {
+     window.location.replace(item);
+  });
 
-listylist = $('#sortable').children().map(function(i,a){
-  return a.src
-})
-
-*/
+  $('#instas').hide()
+  var centery = $('<center>')
+  var loader = $('<img>').attr('src', '/assets/ajaxload.GIF');
+  centery.append(loader)
+  $('#loader').append(centery)
+}
 
 </script>
 
