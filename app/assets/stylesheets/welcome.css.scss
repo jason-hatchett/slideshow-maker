@@ -16,6 +16,12 @@ width: 100%;
 height: 550px;
 }
 
+.companiescontainer {
+  background-color: #78b5e2;
+  width: 100%;
+  height: 100px;
+}
+
 .logo {
   background-color: #78b5e3;
   text-align: center;
@@ -90,12 +96,14 @@ height: 550px;
 
 .purposetext {
   font-family: 'Raleway', sans-serif;
-  color: #636465;
+  color: #c9deee;
+  text-shadow: 2px 2px #899caa;
 }
 
 .purposetext2 {
   font-family: 'Raleway', sans-serif;
   color: #636465;
+  text-shadow: 2px 2px white;
 }
 
 .purposetext3 {
@@ -205,7 +213,7 @@ display: inline-block;
 height: 450px;
 width: 450px;
 float: left;
-padding-top: 30px;
+padding-top: 10px;
 }
 
 .infographictext {
@@ -213,21 +221,22 @@ padding-top: 30px;
   width: 450px;
   display: inline-block;
   margin-right: 150px;
-  font-family: 'Cabin Condensed', sans-serif;
-  font-size: 40px;
-  color: #4b4b4c;
-
+  margin-top: -20px;
   float: right;
 }
 
 .infographictext2 {
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
-  color: #4b4b4c;
+  color: #719fbd;
 }
 
 .textspace1 {
   line-height: 45px;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 40px;
+  color: #697780;
+  text-shadow: 1px 1px 1px #b3d8f2;
 }
 
 .textspace2 {
@@ -236,6 +245,12 @@ padding-top: 30px;
 
 .sharecontainer {
   background-color: #e6eef6;
+}
+
+.cloudcontainer {
+width: 100%;
+height: 590px;
+background-image: url(cloudbg6.png);
 }
 
 .footerindex {
@@ -247,13 +262,46 @@ background-image: url(hashmashbg.jpg);
 .videoplayer {
   /*background-image: url(hashmashbglower.png);*/
   border-radius: 20px;
-  height: 675px;
-  padding-top: 50px;
-  background-color: #9cc3e3;
+  background-color: #5f99c7;
+  height: 300px;
+  width: 400px;
+  display: inline-block;
+  margin-top: 70px;
+  margin-left: 50px;
  /* background-color: (228,235,249,.5);*/
 }
 
 .videotext {
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
+}
+
+hr {
+margin-top: 0.2em;
+margin-bottom: 0.2em;
+border-color: #4e7ea4;
+}
+
+#instasymbol {
+  font-size: 3em;
+  color: #4e7ea4;
+}
+
+.youhash {
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 40px;
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px #899caa;
+}
+
+.videotextdiv {
+margin-left: 150px;
+display: inline-block;
+height: 450px;
+width: 550px;
+float: left;
+padding-top: 40px;
+margin-top: 40px;
+margin-right: 40px;
 }
