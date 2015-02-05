@@ -12,8 +12,10 @@
       <!-- Where we store the currently used images-->
     </div>
     <br>
+    <span id="notice"></span>
     <br>
-    <%= submit_tag "BUILD IT", :class => "button radius", :id => "search-font" %>
+    <br>
+    <%= submit_tag "BUILD IT", :class => "button radius", :id => "submit_button" %>
 
     <% @alldata.each_with_index do |x, index|%>
       <% if index%5 == 0 %>
@@ -44,11 +46,17 @@ $('.fa-check').hide()
 
 $('.th').on('click', function(e) {
   if ($(this).prop("checked") == undefined){
-    $(this).prop("checked", true)
+    $(this).prop("checked", false)
   }
-  else{
-     $(this).prop("checked", !($(this).prop("checked")))
+  
+
+  if (($('#sortable').children().length < 15 && $(this).prop("checked") == false )){
+    $(this).prop("checked", !($(this).prop("checked")))
   }
+  else if($(this).prop("checked")){
+    $(this).prop("checked", !($(this).prop("checked")))
+  }
+    
 
   if ( $(this).prop("checked")){
     var copy = $(this).children('img').clone()
@@ -72,6 +80,34 @@ $('.th').on('click', function(e) {
 
 
 //create button and on click send array
+
+$("#submit_button").click(function(){
+
+  nameyname = $("#video_name").val()
+
+  listylist = $('#sortable').children().map(function(i,a){
+    return a.src
+  })
+
+  if (nameyname.length > 5 && listylist.length > 4){
+    //send to server
+    //present or redirect to loading icon
+  }
+  else if (nameyname.length > 6) {
+    alert("Please select at least 5 images")
+    $('#notice').text("Please select at least 5 images")
+  }
+  else if(listylist.length > 4){
+    alert("Please give a name longer than 5 characters")
+    $('#notice').text("Please give a name longer than 5 characters")
+  }
+  else{
+    alert("Please give a name longer than 5 characters and at least 5 images")
+    $('#notice').text("Please give a name longer than 5 characters and at least 5 images")
+  }
+
+});
+
 
 /* this will return an array of images
 
