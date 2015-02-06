@@ -11,11 +11,29 @@
 </section>
 
 
-<center>
+
+<div class="small-3 small-centered columns">
 <h2>All Videos:</h2>
+<%= text_field_tag :search_filter, nil, :placeholder => "Filter By Video Name or Creation Tag" %>
+<div id="videos">
+  <% @videos.reverse_each do |video| %>
+    <ul><%= link_to video.title, "/videos/#{video.id}" %></ul>
+  <% end %>
+</div>
+</div>
 
-<% @videos.reverse_each do |video| %>
-<li><%= link_to video.title, "/videos/#{video.id}" %></li>
-<% end %>
 
-</center>
+<script>
+
+$('#search_filter').change(function() { 
+  $('#videos').empty()
+  <% @videos.reverse_each do |video| %>
+  var filtery = $('#search_filter').val().toLowerCase()
+  if ("<%= video.title %>".toLowerCase().indexOf(filtery) > -1 || "<%= video.tag %>".toLowerCase().indexOf(filtery) > -1){
+    $('#videos').append('<ul><%= link_to video.title, "/videos/#{video.id}" %></ul>');
+  }
+  <% end %>
+});
+
+
+</script>
