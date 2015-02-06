@@ -102,8 +102,7 @@ function sendToBackend(title, music, imgs){
   url: '/hashtag/encode',
   data:{'title': title, 'imgs': imgs, 'music': music}
   }).success(function (item) {
-    console.log(item)
-     window.location.replace(item);
+    window.location.replace(item.path);
   });
 
   $('#instas').hide()
