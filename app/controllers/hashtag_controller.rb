@@ -26,7 +26,7 @@ class HashtagController < ApplicationController
 
   def encode
     url = ENV['HASHMASH_ENCODE'] #url of encode server
-    title = params[:title]
+    title = params[:title].split(' ').join('')
     music = params[:music]
     images = params[:imgs]
     #tag = params[:tag]
@@ -42,10 +42,10 @@ class HashtagController < ApplicationController
         tag: @tag,
         views: 0
       })
-      
-      render json: video_path(video).to_json
+
+      render :json => {path: video_path(video)}
     else
-      render json: root_path.to_json
+      render :json => {path: root_path}
     end
 
   end
