@@ -64,7 +64,7 @@ $('.th').on('click', function(e) {
   }
 
 
-  if (($('#sortable').children().length < 15 && $(this).prop("checked") == false )){
+  if (($('#sortable').children().length < 11 && $(this).prop("checked") == false )){
     $(this).prop("checked", !($(this).prop("checked")))
   }
   else if($(this).prop("checked")){
@@ -100,7 +100,7 @@ $("#submit_button").click(function(){
   nameyname = $("#video_name").val()
 
   listylist = []
-  $('#sortable').children().map(function(i,a){
+  $('#sortable').children('img').map(function(i,a){
     listylist.push("" + a.src.replace("/s150x150", ""))
   })
 
