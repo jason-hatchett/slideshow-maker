@@ -11,36 +11,43 @@
 </section>
 
 
-<div class="large-12 large-centered columns hashyhide">
-  <center>
-    <%= form_tag("/hashtag/pics") do |f| %>
-    <br><%= image_tag("one.png")%>&nbsp;&nbsp;&nbsp;
-    <div class="stay-on-line">
-    <%= label_tag :hashy_tag,"ENTER A HASHTAG: ", :class => "hashtag-font" %>
-  </div>&nbsp;&nbsp;
-  <!--   <div class="stay-on-line">
-
-      <i class="fa fa-slack" id='hashtag-symbol'></i> -->
+  <div class ="row">
+    <div class="large-6 large-pull-5 columns hashyhide">
+      
+      <br>
+      <%= form_tag("/hashtag/pics") do |f| %>
+      <%= image_tag("one.png")%>&nbsp;&nbsp;
       <div class="stay-on-line">
-      <%= text_field_tag :tag, nil, :placeholder => "no spaces" %>
+        <%= label_tag :hashy_tag,"ENTER A HASHTAG: ", :class => "hashtag-font" %>
+      </div>
+      <div class="stay-on-line">
+        <%= text_field_tag :tag, nil, :placeholder => "no spaces" %>
+      </div>
+      <div class="stay-on-line">
+        <%= submit_tag "GO", :class => "tiny button radius gobutton", :id => "search-font" %>
+      </div>
+      <% end %>
+
+      <div id ="extraforms">
+        <%= render "moreforms" %>
+      </div>
+      
+    </div>
+  
+    <aside class="large-6 columns">
+
+      <div id="instas">
+        <%= render "showpics" %>
+      </div>
+      
+      <div id="loader">
+      
+      </div>
 
     </div>
-    <div class="stay-on-line">
-    <%= submit_tag "GO", :class => "tiny button radius gobutton", :id => "search-font" %>
+
   </div>
-    <% end %>
-  </center>
-</div>
 
-<br>
-
-<div id="instas">
-  <%= render "showpics" %>
-</div>
-
-<div id="loader">
-
-</div>
 
 <br>
 <br>
