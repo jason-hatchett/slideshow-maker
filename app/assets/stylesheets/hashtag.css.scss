@@ -4,28 +4,15 @@
 
 
 .banner-all {
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-width: 100%;
-height: 100px;
-background-image: url(hashmashbg.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100px;
+  background-image: url(hashmashbg.jpg);
 }
 
-#searchbutton {
-  background-color: #3c7db0;
-  margin-right: 4px;
-  margin-top: 16px;
-  font-family: 'Raleway', sans-serif;
-}
-
-#createbutton {
-  background-color: #78b5e3;
-  margin-top: 16px;
-  margin-right: 8px;
-  font-family: 'Raleway', sans-serif;
-}
 
 .hashtag-font {
   font-family: 'Cabin Condensed', sans-serif;
@@ -49,3 +36,31 @@ background-image: url(hashmashbg.jpg);
   color: #697780;
   text-shadow: 1px 1px 1px #b3d8f2;
 }
+
+.form3 {
+  margin-left: 150px;
+  display: inline-block;
+  height: 200px;
+  width: 550px;
+  float: left;
+  padding-top: 10px;
+}
+
+.gobutton {
+  background-color: #5f99c7;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+.gobutton:hover {
+  background-color: #3c7db0;
+  font-family: 'Cabin Condensed', sans-serif;
+  color: white;
+  font-weight: 400;
+}
+
+
+
+
+

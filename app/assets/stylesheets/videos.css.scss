@@ -81,3 +81,46 @@ background-image: url(hashmashbg.jpg);
   width: 10px;
 }
 
+.form1 {
+margin-left: 150px;
+display: inline-block;
+height: 700px;
+width: 550px;
+float: left;
+padding-top: 10px;
+}
+
+.form2 {
+  height: 700px;
+  width: 550px;
+  display: inline-block;
+  margin-right: 150px;
+  margin-top: -20px;
+  float: right;
+  border-color: black;
+}
+
+#submit_button {
+  background-color: #5f99c7;
+  font-family: 'Cabin Condensed', sans-serif;
+  /*text-shadow: 1px 1px 6px lightgray;*/
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
+
+
+#submit_button:hover {
+  background-color: #3c7db0;
+  font-family: 'Cabin Condensed', sans-serif;
+  /*text-shadow: 1px 1px 6px lightgray;*/
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
+
+

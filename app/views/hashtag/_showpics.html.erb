@@ -9,10 +9,13 @@
     </div>
      </div><br>
     <div class="large-6 large-centered columns">
-    <%= image_tag "three.png" %>&nbsp;&nbsp;&nbsp;<span class="hashtag-font">CHOOSE 10 PHOTOS&nbsp;&nbsp;(move 'em around if you like!)&nbsp;&nbsp;&nbsp;</span>
+    <%= image_tag "three.png" %>&nbsp;&nbsp;&nbsp;&nbsp;<span class="hashtag-font">CHOOSE 10 PHOTOS&nbsp;&nbsp;(move 'em around if you like!)&nbsp;&nbsp;&nbsp;</span>
   </div>
-
     <br>
+    <div class="large-6 large-centered columns">
+      <%=image_tag "four.png" %>&nbsp;&nbsp;&nbsp;&nbsp;<span class="hashtag-font">ADD SOME MUSIC:&nbsp;&nbsp;&nbsp;&nbsp;</span><div class="stay-on-line"><%= select_tag :music_choice, options_for_select([[" Celebratory ", "1"], [" Happy ", "2"], [" 80s Jam ", "3"], [" Sentimental ", "4"]]) %>
+    </div>
+  </div>
     <div class="large-12 large-centered columns">
 
     <!-- This is the cloud -->
@@ -102,7 +105,7 @@ $("#submit_button").click(function(){
   })
 
   if (nameyname.length > 5 && listylist.length > 4){
-    
+
     sendToBackend(nameyname,"None",listylist)
   }
   else if (nameyname.length > 4) {
@@ -122,7 +125,7 @@ $("#submit_button").click(function(){
 
 
 function sendToBackend(title, music, imgs){
-  
+
   $.ajax({
   type: 'POST',
   url: '/hashtag/encode',
