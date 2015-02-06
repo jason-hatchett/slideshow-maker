@@ -1,3 +1,5 @@
+
+
 class HashtagController < ApplicationController
   respond_to :html, :js
 
@@ -40,9 +42,10 @@ class HashtagController < ApplicationController
         tag: @tag,
         views: 0
       })
-      video_path(video)
+      
+      render json: video_path(video).to_json
     else
-      root_path
+      render json: root_path.to_json
     end
 
   end

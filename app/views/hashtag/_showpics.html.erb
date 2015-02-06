@@ -1,40 +1,10 @@
 
-
-<center>
-
   <% if @alldata %>
-    <div class="large-6 large-centered columns">
-      <%= image_tag "two.png" %>&nbsp;&nbsp;&nbsp;&nbsp;<div class="stay-on-line"><%= label_tag :video_title,"GIVE YOUR VIDEO A TITLE:", :class => "hashtag-font" %></div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="stay-on-line">
-      <%= text_field_tag :video_name, nil, :placeholder => "make it cool" %>
-    </div>
-     </div><br>
-    <div class="large-6 large-centered columns">
-    <%= image_tag "three.png" %>&nbsp;&nbsp;&nbsp;&nbsp;<span class="hashtag-font">CHOOSE 10 PHOTOS&nbsp;&nbsp;(move 'em around if you like!)&nbsp;&nbsp;&nbsp;</span>
-  </div>
-    <br>
-    <div class="large-6 large-centered columns">
-      <%=image_tag "four.png" %>&nbsp;&nbsp;&nbsp;&nbsp;<span class="hashtag-font">ADD SOME MUSIC:&nbsp;&nbsp;&nbsp;&nbsp;</span><div class="stay-on-line"><%= select_tag :music_choice, options_for_select([[" Celebratory ", "1"], [" Happy ", "2"], [" 80s Jam ", "3"], [" Sentimental ", "4"]]) %>
-    </div>
-  </div>
-    <div class="large-12 large-centered columns">
-
-    <!-- This is the cloud -->
-    <div id="sortable">
-      <!-- Where we store the currently used images-->
-       <span class='shadow'></span>
-     </div>
-    </div>
-
-    <br>
-    <span id="notice"></span>
-    <br>
-    <br>
-    <%= submit_tag "BUILD IT", :class => "button radius", :id => "submit_button" %>
 
     <% @alldata.each_with_index do |x, index|%>
-      <% if index%5 == 0 %>
+      <!--<% if index%5 == 0 %>
         </br></br>
-      <% end %>
+      <% end %> -->
         <a class="th">
           <img src="<%= x["images"]["thumbnail"]["url"] %>" id="<%= index %>" class="hashtag-images" />
           <i class="fa fa-check" id='bigger'></i>
@@ -44,7 +14,8 @@
 
   <% end %>
 
-</center>
+
+
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
@@ -131,6 +102,7 @@ function sendToBackend(title, music, imgs){
   url: '/hashtag/encode',
   data:{'title': title, 'imgs': imgs, 'music': music}
   }).success(function (item) {
+    console.log(item)
      window.location.replace(item);
   });
 

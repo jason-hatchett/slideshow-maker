@@ -1,0 +1,35 @@
+ <% if @alldata %>
+    
+      <%= image_tag "two.png" %>&nbsp;&nbsp;<div class="stay-on-line"><%= label_tag :video_title,"GIVE YOUR VIDEO A TITLE:", :class => "hashtag-font" %></div>
+      <div class="stay-on-line">
+      <%= text_field_tag :video_name, nil, :placeholder => "make it cool" %>
+      </div>
+     <br>
+    
+    <%= image_tag "three.png" %><span class="hashtag-font">&nbsp;&nbsp;CHOOSE 10 PHOTOS&nbsp;&nbsp;(move 'em around if you like!)</span>
+  
+    <br>
+    
+      <%=image_tag "four.png" %>
+      <div class="stay-on-line">
+        <span class="hashtag-font">&nbsp;&nbsp;ADD SOME MUSIC:</span></div>
+        <div class="stay-on-line">
+
+        <%= select_tag :music_choice, options_for_select([[" Celebratory ", "1"], [" Happy ", "2"], [" 80s Jam ", "3"], [" Sentimental ", "4"]]) %>
+      
+      </div>
+    <div class="large-12 columns">
+    <!-- This is the cloud -->
+      <div id="sortable">
+      <!-- Where we store the currently used images-->
+       <span class='shadow'></span>
+      </div>
+    </div>
+    <div class="large-12 columns">
+      <br>
+      <span id="notice"></span>
+      <br>
+      <%= submit_tag "BUILD IT", :class => "button radius", :id => "submit_button" %>
+    </div>
+
+  <% end %>
