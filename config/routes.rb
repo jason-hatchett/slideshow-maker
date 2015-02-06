@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   post '/search' => 'hashtag#create'
-
+  post '/hashtag/encode' => 'hashtag#encode'
   post '/hashtag/pics' => 'hashtag#create'
   get '/search' => 'hashtag#search'
   resources :videos, :except => [:edit, :update]

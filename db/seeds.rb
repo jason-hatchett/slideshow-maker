@@ -6,14 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Video.create({title:"Welcome!",
-  url:"www.youtube.com/embed/Wz5Z0JTmjAg",
+Video.create({title:"Sharks!!",
+  url:"http://s3.amazonaws.com/hashmashc10/tmp/mctigrit/final/mctigrit.mp4",
   tag:"welcome",
   views: 0
 })
 
-Video.create({title:"Dance!",
-  url:"www.youtube.com/embed/60og9gwKh1o",
-  tag:"dance",
-  views: 0
-})
