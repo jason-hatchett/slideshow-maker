@@ -3,14 +3,25 @@
 <center>
 
   <% if @alldata %>
-    <div class="large-3 large-centered columns">
-      <%= label_tag 'Title Your Video:', nil, :class => "hashtag-font" %>
-      <%= text_field_tag :video_name, nil, :placeholder => "Enter Video Name" %>
+    <div class="large-6 large-centered columns">
+      <%= image_tag "two.png" %>&nbsp;&nbsp;&nbsp;&nbsp;<div class="stay-on-line"><%= label_tag :video_title,"GIVE YOUR VIDEO A TITLE:", :class => "hashtag-font" %></div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="stay-on-line">
+      <%= text_field_tag :video_name, nil, :placeholder => "make it cool" %>
     </div>
+     </div><br>
+    <div class="large-6 large-centered columns">
+    <%= image_tag "three.png" %>&nbsp;&nbsp;&nbsp;<span class="hashtag-font">CHOOSE 10 PHOTOS&nbsp;&nbsp;(move 'em around if you like!)&nbsp;&nbsp;&nbsp;</span>
+  </div>
+
     <br>
-    <div id="sortable" class="large-12 large-centered columns">
+    <div class="large-12 large-centered columns">
+
+    <!-- This is the cloud -->
+    <div id="sortable">
       <!-- Where we store the currently used images-->
+       <span class='shadow'></span>
+     </div>
     </div>
+
     <br>
     <span id="notice"></span>
     <br>
@@ -26,7 +37,7 @@
           <i class="fa fa-check" id='bigger'></i>
         </a>
     <% end %>
-    
+
 
   <% end %>
 
@@ -48,7 +59,7 @@ $('.th').on('click', function(e) {
   if ($(this).prop("checked") == undefined){
     $(this).prop("checked", false)
   }
-  
+
 
   if (($('#sortable').children().length < 15 && $(this).prop("checked") == false )){
     $(this).prop("checked", !($(this).prop("checked")))
@@ -56,14 +67,14 @@ $('.th').on('click', function(e) {
   else if($(this).prop("checked")){
     $(this).prop("checked", !($(this).prop("checked")))
   }
-    
+
 
   if ( $(this).prop("checked")){
     var copy = $(this).children('img').clone()
     $(this).children('img').css('opacity', 0.5);
     $(this).children('.fa-check').show();
     //pic_array.push($(this).children('img').attr('src'))
-    
+
     $('#sortable').append(copy)
 
   }

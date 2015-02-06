@@ -11,18 +11,23 @@
 </section>
 
 
-<div class="large-3 large-centered columns">
+<div class="large-6 large-centered columns hashyhide">
   <center>
     <%= form_tag("/hashtag/pics") do |f| %>
-    <br>
+    <br><%= image_tag("one.png")%>&nbsp;&nbsp;&nbsp;
     <div class="stay-on-line">
+    <%= label_tag :hashy_tag,"ENTER A HASHTAG: ", :class => "hashtag-font" %>
+  </div>&nbsp;&nbsp;
+  <!--   <div class="stay-on-line">
 
-      <i class="fa fa-slack" id='hashtag-symbol'></i>
-      <%= text_field_tag :tag, nil, :placeholder => "Enter Your Hashtag" %>
-      
+      <i class="fa fa-slack" id='hashtag-symbol'></i> -->
+      <div class="stay-on-line">
+      <%= text_field_tag :tag, nil, :placeholder => "no spaces" %>
+
     </div>
-    <br>
-    <%= submit_tag "Search", :class => "button radius", :id => "search-font" %>
+    <div class="stay-on-line">
+    <%= submit_tag "GO", :class => "tiny button radius", :id => "search-font" %>
+  </div>
     <% end %>
   </center>
 </div>

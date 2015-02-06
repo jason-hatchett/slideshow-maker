@@ -28,7 +28,9 @@ background-image: url(hashmashbg.jpg);
 }
 
 .hashtag-font {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 #search-font {
@@ -38,4 +40,12 @@ background-image: url(hashmashbg.jpg);
 .hashtag-images {
   border-style: solid;
   border-color: #3c7db0;
+}
+
+.tagaroo {
+  line-height: 45px;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 40px;
+  color: #697780;
+  text-shadow: 1px 1px 1px #b3d8f2;
 }
