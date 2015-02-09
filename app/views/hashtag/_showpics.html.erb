@@ -75,15 +75,15 @@ $("#submit_button").click(function(){
     listylist.push("" + a.src.replace("/s150x150", "/306x306"))
   })
 
-  if (nameyname.length > 5 && listylist.length > 4){
+  if (nameyname.length > 4 && listylist.length > 4){
 
     sendToBackend(nameyname,"None",listylist)
   }
-  else if (nameyname.length > 4) {
+  else if (listylist.length < 5) {
     alert("Please select at least 5 images")
     $('#notice').text("Please select at least 5 images")
   }
-  else if(listylist.length > 4){
+  else if(nameyname.length < 5){
     alert("Please give a name longer than 5 characters")
     $('#notice').text("Please give a name longer than 5 characters")
   }
@@ -96,20 +96,22 @@ $("#submit_button").click(function(){
 
 
 function sendToBackend(title, music, imgs){
-
-  $.ajax({
-  type: 'POST',
-  url: '/hashtag/encode',
-  data:{'title': title, 'imgs': imgs, 'music': music}
-  }).success(function (item) {
-    window.location.replace(item.path);
-  });
-
+  console.log("Posting:", title, music, imgs)
   $('#instas').hide()
   var centery = $('<center>')
   var loader = $('<img>').attr('src', '/assets/ajaxload.GIF');
   centery.append(loader)
   $('#loader').append(centery)
+
+  $.ajax({
+    type: 'POST',
+    url: '/hashtag/encode',
+    data: {'title': title, 'imgs': imgs, 'music': music}
+  }).success(function (item) {
+    console.log("Success:", item)
+    window.location.replace(item.path);
+  });
+
 }
 
 </script>
