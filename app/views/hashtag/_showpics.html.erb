@@ -100,7 +100,7 @@ function sendToBackend(title, music, imgs){
   $('#instas').hide()
   var centery = $('<center>')
   // var loader = $('<img>').attr('src', '/assets/ajaxload.GIF');
-  var loader = $('<img>').attr('src', <%= image_tag "ajaxload.GIF" %>);
+  var loader = $('<img>').attr('<%= image_tag "ajaxload.GIF" %>');
   centery.append(loader)
   $('#loader').append(centery)
 
